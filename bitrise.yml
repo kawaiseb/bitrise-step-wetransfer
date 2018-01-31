@@ -18,7 +18,7 @@ app:
   - WTU_LANGUAGE: "fr"
 
   # Debug mode desactivated by default
-  - WTU_DEBUG: "0"
+  - WTU_DEBUG: "false"
 
   # If you want to share this step into a StepLib
   - BITRISE_STEP_ID: wetransfer-upload
@@ -33,42 +33,20 @@ workflows:
         inputs:
         - content: |
             #!/bin/bash
+            WTU_DEBUG="true"
             WTU_MAILSENDER="spousse@pagesjaunes.fr"
             WTU_MAILRECEIVER="spousse@pagesjaunes.fr"
             WTU_FILEPATH="/tmp/bitrise-step-wetransfer"
             WTU_MESSAGE="Uploading file test"
 
             mkdir $WTU_FILEPATH
-            cd $WTU_FILEPATH
-            echo "I love bitrise" > test.txt
+            echo "I love bitrise" > ${WTU_FILEPATH}/test.txt
 
             npm install wetransfert --save
             node upload.js "${WTU_DEBUG}" "${WTU_MAILSENDER}" "${WTU_MAILRECEIVER}" "${WTU_FILEPATH}" "${WTU_MESSAGE}" "${WTU_LANGUAGE}"
             
             #cleaning
             rm -rf $WTU_FILEPATH
-
-    - change-workdir:
-        title: Switch working dir to test / _tmp dir
-        description: |-
-          To prevent step testing issues, like referencing relative
-          files with just './some-file' in the step's code, which would
-          work for testing the step from this directory directly
-          but would break if the step is included in another `bitrise.yml`.
-        run_if: true
-        inputs:
-        - path: ./_tmp
-        - is_create_path: true
-    - path::./:
-        title: Step Test
-        description: |-
-          The example input has a default value,
-          you can overwrite it if you want to, just like we did below,
-          but the step would use the default value specified in the `step.yml`
-          file if you would not specify another value.
-        run_if: true
-        inputs:
-        - example_step_input: Example Step Input's value
     - script:
         inputs:
         - content: |
