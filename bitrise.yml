@@ -33,8 +33,20 @@ workflows:
         inputs:
         - content: |
             #!/bin/bash
+            WTU_MAILSENDER="spousse@pagesjaunes.fr"
+            WTU_MAILRECEIVER="spousse@pagesjaunes.fr"
+            WTU_FILEPATH="/tmp/bitrise-step-wetransfer"
+            WTU_MESSAGE="Uploading file test"
+
+            mkdir $WTU_FILEPATH
+            cd $WTU_FILEPATH
+            echo "I love bitrise" > test.txt
+
             npm install wetransfert --save
-            node wetransfertupload.js "${WTU_MAILSENDER}" "${WTU_MAILRECEIVER}" "${WTU_FILEPATH}" "${WTU_MESSAGE}" "${WTU_LANGUAGE}"
+            node upload.js "${WTU_DEBUG}" "${WTU_MAILSENDER}" "${WTU_MAILRECEIVER}" "${WTU_FILEPATH}" "${WTU_MESSAGE}" "${WTU_LANGUAGE}"
+            
+            #cleaning
+            rm -rf $WTU_FILEPATH
 
     - change-workdir:
         title: Switch working dir to test / _tmp dir
