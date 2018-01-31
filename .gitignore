@@ -1,2 +1,6 @@
 .bitrise*
 .gows.user.yml
+_tmp
+node_modules
+package-lock.json
+

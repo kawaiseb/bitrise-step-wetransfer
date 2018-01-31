@@ -34,7 +34,7 @@ workflows:
         - content: |
             #!/bin/bash
             npm install wetransfert --save
-            node wetransfertupload.js "${WTU_MAILSENDER}" "${WTU_MAILRECEIVER}" "${WTU_FILEPATH}"" "${WTU_MESSAGE}" "${WTU_LANGUAGE}"
+            node wetransfertupload.js "${WTU_MAILSENDER}" "${WTU_MAILRECEIVER}" "${WTU_FILEPATH}" "${WTU_MESSAGE}" "${WTU_LANGUAGE}"
 
     - change-workdir:
         title: Switch working dir to test / _tmp dir
