@@ -24,7 +24,7 @@ app:
   - BITRISE_STEP_ID: wetransfer-upload
   - BITRISE_STEP_VERSION: "v0.0.1"
   - BITRISE_STEP_GIT_CLONE_URL: https://github.com/kawaiseb/bitrise-step-wetransfer-upload
-  - MY_STEPLIB_REPO_FORK_GIT_URL: https://github.com/bitrise-io/bitrise-steplib
+  - MY_STEPLIB_REPO_FORK_GIT_URL: https://github.com/kawaiseb/bitrise-steplib
 
 workflows:
   test:
