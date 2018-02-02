@@ -22,7 +22,7 @@ app:
 
   # If you want to share this step into a StepLib
   - BITRISE_STEP_ID: wetransfer-upload
-  - BITRISE_STEP_VERSION: "v0.0.1"
+  - BITRISE_STEP_VERSION: "v0.0.2"
   - BITRISE_STEP_GIT_CLONE_URL: https://github.com/kawaiseb/bitrise-step-wetransfer-upload.git
   - MY_STEPLIB_REPO_FORK_GIT_URL: https://github.com/kawaiseb/bitrise-steplib
 
