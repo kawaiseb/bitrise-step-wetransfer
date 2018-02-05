@@ -1,8 +1,7 @@
 #!/bin/bash
 set -ex
 
-echo $WTU_FILEPATH
-
+npm install
 npm install wetransfert --save
 node upload.js "${WTU_DEBUG}" "${WTU_MAILSENDER}" "${WTU_MAILRECEIVER}" "${WTU_FILEPATH}" "${WTU_MESSAGE}" "${WTU_LANGUAGE}"
 
