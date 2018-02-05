@@ -3,8 +3,6 @@ default_step_lib_source: https://github.com/bitrise-io/bitrise-steplib.git
 
 app:
   envs:
-  # Debug mode desactivated by default
-  - WTU_DEBUG: "false"
 
   # If you want to share this step into a StepLib
   - BITRISE_STEP_ID: wetransfer
