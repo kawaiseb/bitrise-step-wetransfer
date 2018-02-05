@@ -8,14 +8,14 @@
 # - Bitrise CLI guides: http://devcenter.bitrise.io/bitrise-cli/
 
 title: |-
-  wetransfer-upload
+  wetransfer
 summary: |
   Upload files to wetransfer and share a short url to download
 description: |
   This step send files to wetransfer. Wetransfer give you a short url to download files. Limit 2GO.
-website: https://github.com/kawaiseb/bitrise-step-wetransfer-upload
-source_code_url: https://github.com/kawaiseb/bitrise-step-wetransfer-upload
-support_url: https://github.com/kawaiseb/bitrise-step-wetransfer-upload/issues
+website: https://github.com/kawaiseb/bitrise-step-wetransfer
+source_code_url: https://github.com/kawaiseb/bitrise-step-wetransfer
+support_url: https://github.com/kawaiseb/bitrise-step-wetransfer/issues
 host_os_tags:
   - osx-10.10
   - ubuntu-16.04
@@ -64,6 +64,16 @@ toolkit:
 
 
 inputs:
+  # All parameter we need to upload files to wetransfer
+  # WTU_MAILSENDER : Email of the sender
+  # WTU_MAILRECEIVER : One or more email separated by coma for receiver
+  # WTU_FILEPATH : The path where are stored one or more files to upload
+  # WTU_MESSAGE : A little body for the mail
+  - WTU_MAILSENDER: $WTU_MAILSENDER
+  - WTU_MAILRECEIVER: $WTU_MAILRECEIVER
+  - WTU_FILEPATH: $WTU_FILEPATH
+  - WTU_MESSAGE: $WTU_MESSAGE
+  - WTU_LANGUAGE: "fr"
   - example_step_input: Default Value - you can leave this empty if you want to
     opts:
       title: "Example Step Input"
