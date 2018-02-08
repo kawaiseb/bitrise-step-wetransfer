@@ -70,6 +70,10 @@ inputs:
   # WTU_FILEPATH : The path where are stored one or more files to upload
   # WTU_MESSAGE : A little body for the mail
   - WTU_MAILSENDER: $WTU_MAILSENDER
+    opts:
+      title:
+      summary: Email of the sender
+      
   - WTU_MAILRECEIVER: $WTU_MAILRECEIVER
   - WTU_FILEPATH: $WTU_FILEPATH
   - WTU_MESSAGE: $WTU_MESSAGE
