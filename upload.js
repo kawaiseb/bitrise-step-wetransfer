@@ -14,14 +14,14 @@ let lang = process.argv[7]; //langage of the mail
 let tabReceivers;
 
 // testing parameters
-if(debug == null || sender == null || tabReceivers == null) {
+if(debug == null || sender == null || receivers == null || filepath == null || lang == null) {
   console.log('ERROR : One or more parameters are invalid');
   return 1;
 }
 
 tabReceivers = receivers.split(',');
 
-if(debug == 'true') {
+if(debug == 'yes') {
     console.log('******* WETRANSFER - DEBUG *******');
     console.log('sender = ' +  sender);
     console.log('receivers = ' + receivers);
@@ -42,11 +42,16 @@ fs.readdir(filepath, function (err, files) { if (err) throw err;
     return 1; //return an error on the step
 
   const myUpload = upload(`${sender}`, tabReceivers, allfiles, `${message}`, `${lang}`)
-        .on('progress', (progress) => console.log('PROGRESS', progress))
+        .on('progress', function(progress){
+          if(debug == 'yes')
+            console.log('PROGRESS', progress);
+        }) 
         .on('end', function(end){
-            console.log('END', end); //end.shortened_url
-            return 0;
+          console.log('END', end); //end.shortened_url
+          return 0;
         })
-        .on('error', (error) => console.error('ERROR', error));
+        .on('error', function(error) {
+          console.error('ERROR', error);
+        })
 
 });

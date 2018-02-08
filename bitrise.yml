@@ -17,7 +17,7 @@ workflows:
         inputs:
         - content: |
             #!/bin/bash
-            WTU_DEBUG="true"
+            WTU_DEBUG="yes"
             WTU_MAILSENDER="spousse@pagesjaunes.fr"
             WTU_MAILRECEIVER="spousse@pagesjaunes.fr"
             WTU_FILEPATH="/tmp/bitrise-step-wetransfer"

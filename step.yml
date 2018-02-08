@@ -50,13 +50,6 @@ is_skippable: false
 run_if: ""
 
 deps:
-  brew:
-  - name: git
-  - name: wget
-  apt_get:
-  - name: git
-  - name: wget
-
 
 toolkit:
   bash:
@@ -89,13 +82,22 @@ inputs:
 
   - WTU_LANGUAGE: "fr"
     opts:
-      title: Default langage
-
+      title: The language of the wetransfer receiver
+      value_options:
+        - "fr"
+        - "en"
   # Debug mode desactivated by default
-  - WTU_DEBUG: "false"
+  - WTU_DEBUG_MODE: "no"
     opts:
-      title: Activate or Desactivate debug mode
-
+      title: "Debug mode ?"
+      description: |
+        Step prints additional debug information if this option
+        is enabled
+      is_expand: true
+      is_required: false
+      value_options:
+      - "yes"
+      - "no"
 
 outputs:
   - WTU_SHORT_URL:
