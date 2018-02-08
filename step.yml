@@ -71,9 +71,11 @@ inputs:
   # WTU_MESSAGE : A little body for the mail
   - WTU_MAILSENDER: $WTU_MAILSENDER
     opts:
-      title:
+      title: Email of the sender
       summary: Email of the sender
-      
+      is_expand: false
+      is_required: true
+
   - WTU_MAILRECEIVER: $WTU_MAILRECEIVER
   - WTU_FILEPATH: $WTU_FILEPATH
   - WTU_MESSAGE: $WTU_MESSAGE
