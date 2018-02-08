@@ -22,7 +22,7 @@ if(debug == null || sender == null || receivers == null || filepath == null || l
 tabReceivers = receivers.split(',');
 
 if(debug == 'yes') {
-    console.log('******* WETRANSFER - DEBUG *******');
+    console.log('******* WETRANSFER - INPUT PARAMETERS *******');
     console.log('sender = ' +  sender);
     console.log('receivers = ' + receivers);
     console.log('filepath = ' + filepath);

@@ -18,10 +18,10 @@ workflows:
         - content: |
             #!/bin/bash
             WTU_DEBUG="yes"
-            WTU_MAILSENDER="spousse@pagesjaunes.fr"
-            WTU_MAILRECEIVER="spousse@pagesjaunes.fr"
-            WTU_FILEPATH="/tmp/bitrise-step-wetransfer"
-            WTU_MESSAGE="Uploading file test"
+            WTU_MAILSENDER=""
+            WTU_MAILRECEIVER=""
+            WTU_FILEPATH=""
+            WTU_MESSAGE=""
 
             mkdir $WTU_FILEPATH
             echo "I love bitrise" > ${WTU_FILEPATH}/test.txt
