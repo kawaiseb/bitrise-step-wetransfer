@@ -78,23 +78,10 @@ inputs:
   # Debug mode desactivated by default
   - WTU_DEBUG: "true"
 
-    opts:
-      title: "Example Step Input"
-      summary: Summary. No more than 2-3 sentences.
-      description: |
-        Description of this input.
-
-        Can be Markdown formatted text.
-      is_expand: true
-      is_required: true
-      value_options: []
-
 outputs:
-  - EXAMPLE_STEP_OUTPUT:
+  - WTU_SHORT_URL:
     opts:
       title: "Example Step Output"
-      summary: Summary. No more than 2-3 sentences.
+      summary: This variable will contain the short URL to the file (s) to download.
       description: |
-        Description of this output.
-
-        Can be Markdown formatted text.
+        
