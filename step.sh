@@ -1,11 +1,11 @@
 #!/bin/bash
 set -ex
 
-ls -l
-pwd
-which node
+THIS_SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+
+echo $THIS_SCRIPT_DIR
 
 npm install
 npm install wetransfert --save
-FDJSKLFJS=$(upload.js "${WTU_DEBUG}" "${WTU_MAILSENDER}" "${WTU_MAILRECEIVER}" "${WTU_FILEPATH}" "${WTU_MESSAGE}" "${WTU_LANGUAGE}")
+$THIS_SCRIPT_DIR/upload.js "${WTU_DEBUG}" "${WTU_MAILSENDER}" "${WTU_MAILRECEIVER}" "${WTU_FILEPATH}" "${WTU_MESSAGE}" "${WTU_LANGUAGE}")
 
