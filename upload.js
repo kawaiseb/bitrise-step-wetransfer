@@ -19,7 +19,8 @@ if(debug == null || sender == null || receivers == null || filepath == null || l
   return 1;
 }
 
-tabReceivers = receivers.split(',');
+receivers = receivers.replace(/ /g, ""); //trim
+tabReceivers = receivers.split(','); //split
 
 console.log(tabReceivers);
 
