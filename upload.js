@@ -3,7 +3,7 @@
 const fs = require('fs');
 const { upload } = require('wetransfert');
 
-// USAGE : node wetransfertupload.js sender receiver filepath message lang
+// USAGE : node wetransfertupload.js debug sender receiver filepath message lang
 
 let debug = process.argv[2]; //debug true/false
 let sender = process.argv[3]; //email of the sender
@@ -11,9 +11,15 @@ let receivers = process.argv[4]; //email of the receiver
 let filepath = process.argv[5]; //filepath where files to send are
 let message = process.argv[6]; //body of the mail
 let lang = process.argv[7]; //langage of the mail
+let tabReceivers;
 
+// testing parameters
+if(debug == null || sender == null || tabReceivers == null) {
+  console.log('ERROR : One or more parameters are invalid');
+  return 1;
+}
 
-let tabReceivers = receivers.split(',');
+tabReceivers = receivers.split(',');
 
 if(debug == 'true') {
     console.log('******* WETRANSFER - DEBUG *******');
@@ -24,7 +30,7 @@ if(debug == 'true') {
     console.log('lang = ' + lang);
 }
 
-//Exploring filepath to get all files
+// exploring filepath to get all files
 var allfiles = [];
 
 fs.readdir(filepath, function (err, files) { if (err) throw err;
