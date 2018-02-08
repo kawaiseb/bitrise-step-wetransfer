@@ -96,8 +96,8 @@ inputs:
       is_expand: true
       is_required: false
       value_options:
-      - "yes"
-      - "no"
+        - "yes"
+        - "no"
 
 outputs:
   - WTU_SHORT_URL:
