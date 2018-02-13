@@ -32,37 +32,37 @@ toolkit:
 
 inputs:
   # All parameter we need to upload files to wetransfer
-  - WTU_MAILSENDER: $WTU_MAILSENDER
+  - wtu_mailsender: $WTU_MAILSENDER
     opts:
       title: Email of the sender
-      is_expand: false
+      is_expand: true
       is_required: true
 
-  - WTU_MAILRECEIVER: $WTU_MAILRECEIVER
+  - wtu_mailreceiver: $WTU_MAILRECEIVER
     opts:
       title: One or more email separated by coma for receiver
       is_required: true
 
-  - WTU_FILEPATH: $WTU_FILEPATH
+  - wtu_filepath: $WTU_FILEPATH
     opts:
       title: The path where are stored one or more files to upload
       summary: You can specify a path or an environnement variable
       is_required: true
   
-  - WTU_MESSAGE: $WTU_MESSAGE
+  - wtu_message: $WTU_MESSAGE
     opts:
       title: A little body for the mail
       summary:
       is_required: true
 
-  - WTU_LANGUAGE: "fr"
+  - wtu_language: "fr"
     opts:
       title: The language of the wetransfer receiver
       value_options:
         - "fr"
         - "en"
   # Debug mode desactivated by default
-  - WTU_DEBUG_MODE: "no"
+  - wtu_debug_mode: "no"
     opts:
       title: "Debug mode ?"
       description: |
