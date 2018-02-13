@@ -4,11 +4,11 @@ This wonderfull step send files to wetransfer.
 
 Store the files you want to send to a directory. Indicate the directory in question in the step. All files in the directory will be sent to wetranfer and accessible to the recipient for download via a short url.
 
-Files are available for 7 days.
-
 ## Limitations
 
-The limit for sending files is 2 GB at wetransfer in the free version.
+The limit for sending files is *2 GB* at wetransfer in the free version.
+
+Files are available for *7 days*.
 
 If you try to send too many files to wetransfer in a short time, wetransfer will send you an error.
 
