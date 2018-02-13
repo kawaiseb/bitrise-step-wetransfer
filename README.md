@@ -25,9 +25,9 @@ Initialize inputs variables from the bitrise form.
 
 * Email of the sender `$WTU_MAILSENDER` **required**
 * One or more email separated by coma for receiver `$WTU_MAILRECEIVER` **required**
+* The path where are stored one or more files to upload `$WTU_FILEPATH` **required**
+* A little body for the mail `$WTU_MESSAGE` **required**
+* The language of the wetransfer receiver, *fr* for french (default) or *en* for english.
+* Debug mode, *yes* or *no* (default)
+    Prints additional debug information in logs if this option is enabled
 
-*Required*
-Email of the sender
-One or more email separated by coma for receiver
-The path where are stored one or more files to upload
-A little body for the mail
