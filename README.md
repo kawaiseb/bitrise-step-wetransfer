@@ -23,8 +23,8 @@ Add the *wetransfer* step into your worflow.
 
 Initialize inputs variables from the bitrise form.
 
-* Email of the sender `$WTU_MAILSENDER` ** required **
-* One or more email separated by coma for receiver `$WTU_MAILRECEIVER` ** required **
+* Email of the sender `$WTU_MAILSENDER` **required**
+* One or more email separated by coma for receiver `$WTU_MAILRECEIVER` **required**
 
 *Required*
 Email of the sender
