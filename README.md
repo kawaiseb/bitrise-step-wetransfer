@@ -13,15 +13,18 @@ If you try to send too many files to wetransfer in a short time, wetransfer will
 
 ## Upcoming improvements
 
-Don't hesite to propose improvements ![here](https://github.com/kawaiseb/bitrise-step-wetransfer/issues)
+Don't hesite to propose improvements [here](https://github.com/kawaiseb/bitrise-step-wetransfer/issues)
 
 Or directly a PR :)
 
 ## How to use this Step
 
-First you have to initialize inputs variables from the bitrise form.
+Add the *wetransfer* step into your worflow.
 
+Initialize inputs variables from the bitrise form.
 
+* Email of the sender `$WTU_MAILSENDER` ** required **
+* One or more email separated by coma for receiver `$WTU_MAILRECEIVER` ** required **
 
 *Required*
 Email of the sender
