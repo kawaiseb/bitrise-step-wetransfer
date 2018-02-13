@@ -1,4 +1,4 @@
-# wetransfer
+# bitrise-step-wetransfer
 
 This wonderfull step send files to wetransfer.
 
