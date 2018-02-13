@@ -1,6 +1,8 @@
-# wetransfer-upload
+# wetransfer
 
-This step send files to wetransfer. Wetransfer give you a short url to download files.
+This wonderfull step send files to wetransfer.
+
+Wetransfer give you a short url to download files.
 
 ## Limitations
 
@@ -11,6 +13,7 @@ If you try to send too many files to wetransfer in a short time, wetransfer will
 ## Upcoming improvements
 
 Don't hesite to propose improvements here : https://github.com/kawaiseb/bitrise-step-wetransfer/issues
+
 
 The next improvement will be :
 https://github.com/kawaiseb/bitrise-step-wetransfer/issues/1
@@ -26,6 +29,7 @@ The path where are stored one or more files to upload
 A little body for the mail
 
 
+![PagesJaunes](https://media-exp2.licdn.com/mpr/mpr/shrink_200_200/AAEAAQAAAAAAAApPAAAAJDVhODcwNjQ0LTA4YjUtNDE4MS1iOTFkLTE3MjRmNGFmNTczZA.png)
 
 
 
