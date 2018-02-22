@@ -10,32 +10,44 @@ app:
   - BITRISE_STEP_GIT_CLONE_URL: https://github.com/kawaiseb/bitrise-step-wetransfer.git
   - MY_STEPLIB_REPO_FORK_GIT_URL: https://github.com/kawaiseb/bitrise-steplib
 
+  - WTU_MAILSENDER: "spousse@pagesjaunes.fr"
+  - WTU_MAILRECEIVER: "spousse@pagesjaunes.fr"
+  - WTU_FILEPATH: "/tmp/wetransfer"
+  - WTU_MESSAGE: "Test"
+  - WTU_DEBUG: "yes"
+
 workflows:
   test:
+    before_run:
+    - audit-this-step
     steps:
+    - change-workdir:
+        title: Switch working dir to _tmp dir
+        run_if: true
+        inputs:
+        - path: "$BITRISE_SOURCE_DIR/_tmp"
+        - is_create_path: true
     - script:
+        title: Prepare test file to send
         inputs:
         - content: |
             #!/bin/bash
-            WTU_DEBUG="yes"
-            WTU_MAILSENDER="spousse@pagesjaunes.fr"
-            WTU_MAILRECEIVER="spousse@pagesjaunes.fr"
-            WTU_FILEPATH="/tmp/wetransfer"
-            WTU_MESSAGE="Test"
-
             mkdir $WTU_FILEPATH
             echo "I love bitrise" > ${WTU_FILEPATH}/test.txt
-
-            npm install wetransfert --save
-            ./upload.js "${WTU_DEBUG}" "${WTU_MAILSENDER}" "${WTU_MAILRECEIVER}" "${WTU_FILEPATH}" "${WTU_MESSAGE}" "${WTU_LANGUAGE}"
-
-            #cleaning
-            rm -rf $WTU_FILEPATH
+    - path::./:
+        title: Step test
+        inputs:
+        - wtu_mailsender: $WTU_MAILSENDER
+        - wtu_mailreceiver: $WTU_MAILRECEIVER
+        - wtu_filepath: $WTU_FILEPATH
+        - wtu_message: $WTU_MESSAGE
+        - wtu_debug_mode: $WTU_DEBUG
     - script:
+        title: Remove test file
         inputs:
         - content: |
             #!/bin/bash
-            echo "***** End of the wetransfer step *****"
+            rm -rf $WTU_FILEPATH
 
   # ----------------------------------------------------------------
   # --- workflows to Share this step into a Step Library
