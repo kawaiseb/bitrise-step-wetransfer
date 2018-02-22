@@ -29,35 +29,32 @@ toolkit:
   bash:
     entry_file: step.sh
 
-
 inputs:
   # All parameter we need to upload files to wetransfer
-  - wtu_mailsender: $wtu_mailsender
+  - wtu_mailsender:
     opts:
       title: Email of the sender
-      is_expand: true
       is_required: true
 
-  - wtu_mailreceiver: $wtu_mailreceiver
+  - wtu_mailreceiver:
     opts:
       title: One or more email separated by coma for receiver
       is_required: true
 
-  - wtu_filepath: $wtu_filepath
+  - wtu_filepath:
     opts:
       title: The path where are stored one or more files to upload
-      summary: You can specify a path or an environnement variable
       is_required: true
   
-  - wtu_message: $wtu_message
+  - wtu_message:
     opts:
       title: A little body for the mail
-      summary:
       is_required: true
 
   - wtu_language: "fr"
     opts:
       title: The language of the wetransfer receiver
+      is_required: true
       value_options:
         - "fr"
         - "en"
@@ -68,8 +65,7 @@ inputs:
       description: |
         Step prints additional debug information if this option
         is enabled
-      is_expand: true
-      is_required: false
+      is_required: true
       value_options:
         - "yes"
         - "no"
