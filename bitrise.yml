@@ -6,12 +6,13 @@ app:
 
   # If you want to share this step into a StepLib
   - BITRISE_STEP_ID: wetransfer
-  - BITRISE_STEP_VERSION: "0.0.5"
+  - BITRISE_STEP_VERSION: "1.0.0"
   - BITRISE_STEP_GIT_CLONE_URL: https://github.com/kawaiseb/bitrise-step-wetransfer.git
   - MY_STEPLIB_REPO_FORK_GIT_URL: https://github.com/kawaiseb/bitrise-steplib
 
-  - WTU_MAILSENDER: "spousse@pagesjaunes.fr"
-  - WTU_MAILRECEIVER: "spousse@pagesjaunes.fr"
+  # To test change sender and receiver emails by true values
+  - WTU_MAILSENDER: "yoursendermail@gmail.fr"
+  - WTU_MAILRECEIVER: "thereceiveremail@gmail.fr"
   - WTU_FILEPATH: "/tmp/wetransfer"
   - WTU_MESSAGE: "Test"
   - WTU_DEBUG: "yes"

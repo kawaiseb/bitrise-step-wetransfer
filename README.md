@@ -37,3 +37,7 @@ If in the target directory there is more than one file, these files will be comp
 
 Prints additional debug information in logs if this option is enabled
 
+## Credit
+
+![PagesJaunes](docs/pagesjaunes.png)
+
